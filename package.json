@@ -1,0 +1,22 @@
+{
+  "name": "powerdns-pipe-recurse",
+  "version": "0.0.0",
+  "description": "ERROR: No README data found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfowlewebs/powerdns-pipe-recurse"
+  },
+  "bugs": {
+    "url": "https://github.com/mfowlewebs/powerdns-pipe-recurse/issues"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "koa": "^2.0.0-alpha.2"
+  }
+}
