@@ -1,3 +1,5 @@
+"use strict"
+
 var
   dns = require("dns")
 
@@ -30,9 +32,10 @@ function parseHeaders(){
 	}
 }
 
-function resolve(name, record){
+function resolve(domain, record){
 	return new Promise(function(resolve, reject){
-		dns.resolve(name, record, function(err, address){
+		console.log("resolve", domain, record)
+		dns.resolve(domain, record, function(err, address){
 			if(err){
 				reject(err)
 			}else{
@@ -47,7 +50,7 @@ function lookup(){
 		handler.deprefix.call(this)
 		handler.parseUrl.call(this)
 		handler.parseHeaders.call(this)
-		this.results = yield handler.resolve.call(this)
+		this.results = yield handler.resolve.call(this, this.params.domain, this.params.record)
 		yield next
 	}
 	handler.deprefix = deprefix

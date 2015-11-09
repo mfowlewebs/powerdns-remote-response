@@ -1,11 +1,28 @@
-var dns = require("dns")
+var
+  dns = require("dns")
+var
+  APPNAME = "PDNSRR_"
 
-var APPNAME= "PDNSRR_"
+console.log("Configuration: beginning")
 
-var servesr= process.env[APPNAME + "DNS_SERVERS"]
-if(dnsServers)
+var
+  dnsServers = process.env[APPNAME + "DNS_SERVERS"],
+  port = process.env[APPNAME + "PORT"]
+
+if(dnsServers){
 	dns.setServers(dnsServers)
-	console.log("Configured DNS Servers:", dnsServers.join(","))
+	module.export.dnsServers = dnsServers
+	console.log("DNS Servers:", dnsServers.join(","))
 }else{
-	console.log("System DNS Servers:", dnsServers.join(","))
+	console.log("DNS Servers: system (default)")
 }
+
+if(port){
+	console.log("Port:", port)
+}else{
+	port = 5053
+	console.log("Port: ", port, "(default)")
+}
+module.exports.port = port
+
+console.log("Configuration: done")
