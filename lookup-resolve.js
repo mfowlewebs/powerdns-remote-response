@@ -50,7 +50,7 @@ function lookup(){
 		handler.deprefix.call(this)
 		handler.parseUrl.call(this)
 		handler.parseHeaders.call(this)
-		this.results = yield handler.resolve.call(this, this.params.domain, this.params.record)
+		this.results = resolve.call(this, this.params.domain, this.params.record)
 		yield next
 	}
 	handler.deprefix = deprefix
